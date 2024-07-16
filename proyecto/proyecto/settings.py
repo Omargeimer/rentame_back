@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_bootstrap5',
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,7 +48,16 @@ INSTALLED_APPS = [
     'renta.apps.RentaConfig',
     'valoraciones.apps.ValoracionesConfig',
     'ckeditor',
+    'colorfield',
     ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+X_FRAME_OPTIONS='SAMEORIGIN'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -141,4 +152,8 @@ CKEDITOR_CONFIGS ={
         'toolbar':None, #No filtra el topbar (pone todo)
     }
 }
+
+#variables de redirección de LOGIN y LOGOUT
+LOGIN_REDIRECT_URL = 'Catalogo'
+LOGOUT_REDIRECT_URL = 'Catalogo'
 

@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 #Función perfil para mostrar el perfil de un usuario.
 def perfil(request):
     return render(request, 'admin_users/perfil.html')

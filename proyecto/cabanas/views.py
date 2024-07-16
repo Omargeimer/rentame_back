@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 from admin_cabanas.models import Cabana, ImagenCabana
 from promociones.models import Promocion
+
 # Create your views here.
 
 #Función catalogo para mostrar la página principal del sitio web.
@@ -25,3 +27,7 @@ def sobre_nosotros(request):
 #Función error_404 para mostrar cuando no existe la página solicitada.
 def error_404(request):
     return render(request, 'cabanas/error_404.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('Catalogo')
